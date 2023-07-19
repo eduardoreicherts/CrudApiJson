@@ -1,0 +1,17 @@
+{
+    "0": {
+        "username": "Renato Gaucho",
+        "email": "qqcoisa@gmail.com",
+        "password": "12345678"
+    },
+    "1": {
+        "username": "Luis Mario",
+        "email": "user@gmail.com",
+        "password": "87654321"
+    },
+    "2": {
+        "username": "Pedro",
+        "email": "user3@gmail.com",
+        "password": "6789"
+    }
+}
