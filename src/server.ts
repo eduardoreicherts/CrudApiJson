@@ -1,5 +1,11 @@
 //Importando o app do app.ts
 import app from './app'
+//Importando o dotenv
+import dotenv from "dotenv";
+//Chamando a função config do dotenv
+dotenv.config()
+//Declarando a variavel da porta
+const port = process.env.PORT || 3000
 
 //Iniciar servidor
-app.listen(1903, () => console.log(`listeniing at port: 1903`));
+app.listen(port, () => console.log(`listeniing at port: ${port}`));
