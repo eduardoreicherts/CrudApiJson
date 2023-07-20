@@ -1,21 +1,22 @@
-import express from "express";
+//Importando o arquivo express
+const express = require('express');
 //Importar o banco de dados de extensão .json
 const data: string = './database.json';
 //Imporatr o pacote file system para manipular arquivos
 const fs = require('fs');
 //Declarando a variavel router
-const router = express.Router()
+const router = express.Router();
 
 //Listar usuarios
-router.get('/api/users', (req: any, res: any) => {
+router.get('/users', (req: any, res: any) => {
     //Pegar o conteudo do arquivo JSON
     const jsonData = fs.readFileSync(data);
     //Analisar string JSON e transformar em um objeto
-    res.send(JSON.parse(jsonData))
+    res.send(JSON.parse(jsonData));
 });
 
 //Cadastrar usuarios
-router.post('/api/users', (req: any, res: any) => {
+router.post('/users', (req: any, res: any) => {
     //Pegar o conteudo do arquivo JSON
     const jsonDataBase = fs.readFileSync(data);
     //Analisar string JSON e transformar em um objeto
@@ -23,7 +24,7 @@ router.post('/api/users', (req: any, res: any) => {
     //Numero de usuarios cadastrados no database.json
     let index: number = Object.keys(content).length;
     //criar uma nova chave de objeto somando +1 do total de objeto
-    content[index++] = req.body
+    content[index++] = req.body;
     //analisa um objeto em JavaScript e transforma em uma string JSON
     const values = JSON.stringify(content);
 
@@ -35,7 +36,7 @@ router.post('/api/users', (req: any, res: any) => {
 });
 
 //Editar usuario
-router.put('/api/user/:id', (req: any, res: any) => {
+router.put('/user/:id', (req: any, res: any) => {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
 
@@ -55,10 +56,10 @@ router.put('/api/user/:id', (req: any, res: any) => {
     fs.writeFileSync(data, values);
 
     //retorno amigável para o usuário que o endpoint
-    res.send(`User with id ${userId} has been updated`)
+    res.send(`User with id ${userId} has been updated`);
 });
 
-router.delete('/api/user/:id', (req: any, res: any) => {
+router.delete('/user/:id', (req: any, res: any) => {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
 
@@ -82,4 +83,4 @@ router.delete('/api/user/:id', (req: any, res: any) => {
 });
 
 //exportando as rotas
-export default router
+export default router;
