@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 //Para o app usar o router
-app.use('/api', userRouter);
+app.use('/api/', userRouter);
 
 //Exportando o app para o server.ts
 export default app;
