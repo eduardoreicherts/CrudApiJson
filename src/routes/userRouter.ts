@@ -1,20 +1,13 @@
 //Importando o arquivo express
 const express = require('express');
-//Importar o banco de dados de extensão .json
-const data: string = './database.json';
-//Imporatr o pacote file system para manipular arquivos
-const fs = require('fs');
 //Declarando a variavel router
 const router = express.Router();
+//Importando as funções do userController
+import userController from '../controller/userController'
 
 //Listar usuarios
-router.get('/users', (req: any, res: any) => {
-    //Pegar o conteudo do arquivo JSON
-    const jsonData = fs.readFileSync(data);
-    //Analisar string JSON e transformar em um objeto
-    res.send(JSON.parse(jsonData));
-});
-
+router.get('/users', userController.listUsers);
+/*
 //Cadastrar usuarios
 router.post('/users', (req: any, res: any) => {
     //Pegar o conteudo do arquivo JSON
@@ -81,6 +74,6 @@ router.delete('/user/:id', (req: any, res: any) => {
     //retorno amigável para o usuário que o endpoint
     res.send(`User with id ${userId} has been deleted`);
 });
-
+*/
 //exportando as rotas
 export default router;
