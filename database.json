@@ -1,17 +1,1 @@
-{
-    "0": {
-        "username": "Lucas",
-        "email": "user3s@gmail.com",
-        "password": "6789"
-    },
-    "1": {
-        "username": "João",
-        "email": "user2@gmail.com",
-        "password": "1999"
-    },
-    "2": {
-        "username": "Let's que Let's",
-        "email": "user2@gmail.com",
-        "password": "1803"
-    }
-}
+{"0":{"username":"Paulo","email":"user3s@gmail.com","password":"6789"},"1":{"username":"Pedro","email":"user2@gmail.com","password":"1803"}}
