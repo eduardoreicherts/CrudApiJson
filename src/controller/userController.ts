@@ -81,10 +81,5 @@ async function delUser(req: Request, res: Response) {
     res.send(`User with id ${userId} has been deleted`);
 };
 
-//Exportando funções assíncronas do CRUD
-export default {
-    listUsers,
-    registUsers,
-    editUser,
-    delUser
-};
+//Exportando funções assíncronas das rotas
+export default {listUsers, registUsers, editUser, delUser};
