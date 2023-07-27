@@ -47,3 +47,7 @@ touch database.json
 ```
 npm run start
 ```
+# Instalar todas as dependencias do package.json
+```
+npm install
+```
