@@ -25,24 +25,28 @@ async function registUsers(req: Request, res: Response) {
 };
 
 async function editUser(req: Request, res: Response) {
-    const querySql = 'UPDATE clients SET DS_NAME, NM.CELLPHONE, DS.STATUS = (?, ?, ?)WHERE ID_CLIENTS = ?;'
+    const querySql = 'update clients set DS_NAME = ?, NM_CELLPHONE = ?, DS_STATUS = ? where ID_CLIENT = ?;'
 
     const params = [
-        req.params.ID_CLIENTS,
         req.body.DS_NAME,
         req.body.NM_CELLPHONE,
-        req.body.DS_STATUS
+        req.body.DS_STATUS,
+        req.params.id
     ];
 
-    const userid: string = req.params.id;
-
     db.connection.query(querySql, params, (err, results) => {
-        res.send('Edição realizada com sucesso!' + results)
+        res.send('Editado com sucesso!' + results)
     });
 };
 
 async function deleteUser(req: Request, res: Response) {
-    
+    const querySql = 'delete from clients where ID_CLIENT = ?;'
+
+    const param = req.params.id
+
+    db.connection.query(querySql, param, (err, results) => {
+        res.send('Deletado com sucesso!' + results)
+    });
 };
 
 
