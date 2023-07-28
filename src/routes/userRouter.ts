@@ -13,9 +13,9 @@ router.post('/users', userController.registUsers);
 
 //Editar usuario
 router.put('/user/:id', userController.editUser);
-
+/*
 //Deletar usuario
 router.delete('/user/:id', userController.delUser);
-
+*/
 //exportando as rotas
 export default router;
